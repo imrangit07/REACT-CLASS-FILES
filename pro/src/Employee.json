@@ -1,0 +1,20 @@
+{
+  "Employee": [
+    {
+      "id": "100",
+      "name": "Imran Hussain",
+      "position": "Mern developer",
+      "department": "IT",
+      "phone": "9090909090",
+      "salary": "120000"
+    },
+    {
+      "id": "101",
+      "name": "Arman",
+      "position": "Web dev",
+      "department": "IT",
+      "phone": "8080808080",
+      "salary": "88888"
+    }
+  ]
+}
