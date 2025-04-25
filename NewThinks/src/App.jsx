@@ -4,6 +4,8 @@ import Layout from './Layout'
 import UseMemo from './Pages/UseMemo'
 import Home from './Pages/Home'
 import Reducer from './Pages/Reducer'
+import ChangeBg from './Pages/ChangeBg'
+import UseRef from './Pages/UseRef'
 
 const App = () => {
   return (
@@ -14,6 +16,8 @@ const App = () => {
       <Route path='home' element={<Home/>}/>
       <Route path='usememo' element={<UseMemo/>}/>
       <Route path='reducer' element={<Reducer/>}/>
+      <Route path='change' element={<ChangeBg/>}/>
+      <Route path='useref' element={<UseRef/>}/>
 
       </Route>
     </Routes>
