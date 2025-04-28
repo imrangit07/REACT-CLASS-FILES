@@ -1,0 +1,28 @@
+{
+  "employee": [
+    {
+      "id": "bd67",
+      "emp_id": "90",
+      "name": "Arman",
+      "designation": "dsf",
+      "department": "IT",
+      "salary": "90000"
+    },
+    {
+      "id": "f233",
+      "emp_id": "8",
+      "name": "deepti",
+      "designation": "dsf",
+      "department": "IT",
+      "salary": "900000"
+    },
+    {
+      "id": "6068",
+      "emp_id": "2",
+      "name": "muskan",
+      "designation": "dsf",
+      "department": "IT",
+      "salary": "707070"
+    }
+  ]
+}

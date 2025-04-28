@@ -1,10 +1,12 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState,useRef } from 'react';
 
 const App = () => {
   const [password, setPassword] = useState("");
   const [length, setLength] = useState(6);
   const [number, setNumber] = useState(false);
   const [specialChar, setSpecialChar] = useState(false);
+
+  const clipbord = useRef(null);
 
   const generatePassword = useCallback(() => {
     let str = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -24,6 +26,13 @@ const App = () => {
     generatePassword();
   }, [length, number, specialChar, generatePassword]);
 
+
+  const copyClipboard = useCallback(()=>{
+    // clipbord.current?.select()
+    // clipbord.current?.setSelectionRange(0,19)
+    navigator.clipboard.writeText(password);
+    alert("copy")
+  },[password])
   return (
     <div style={{
       display: 'flex',
@@ -51,6 +60,7 @@ const App = () => {
       />
 
       <button
+        ref={clipbord}
         style={{
           padding: '10px 20px',
           marginBottom: '20px',
@@ -60,14 +70,10 @@ const App = () => {
           borderRadius: '5px',
           cursor: 'pointer'
         }}
-        onClick={() => {
-          navigator.clipboard.writeText(password);
-          alert("Password Copied!");
-        }}
+        onClick={copyClipboard}
       >
         Copy
       </button>
-
       <div style={{ marginBottom: '10px' }}>
         <input
           type="range"
