@@ -30,9 +30,9 @@ const App = () => {
     return (
       <li
         key={index}
-        className={`todo-item ${todos.complited ? "todo-item-complete" : "todo-item-incomplete"}`}
+        className={`todo-item ${todos.completed ? "todo-item-complete" : "todo-item-incomplete"}`}
       >
-        <span className={`todo-text ${todos.complited ? "todo-text-complete" : "todo-text-incomplete"}`}>
+        <span className={`todo-text ${todos.completed ? "todo-text-complete" : "todo-text-incomplete"}`}>
           {todos.todo}
         </span>
 
@@ -82,7 +82,7 @@ const App = () => {
         (
           <button
             onClick={() => {
-              dispatch(addTodo({ id: Date.now(), todo: input, complited: false }));
+              dispatch(addTodo({ id: Date.now(), todo: input, completed: false }));
               setInput("");
             }}
             className="todo-button todo-add-button"

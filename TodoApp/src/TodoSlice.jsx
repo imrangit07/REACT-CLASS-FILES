@@ -19,23 +19,28 @@ const todoSlice = createSlice({
         },
         compliteTodo: (state, actions) => {
             let compId = state.Todo.find((key) => key.id == actions.payload);
-            compId.complited = true;
+            compId.completed = true;
         },
         inCompliteTodo: (state, actions) => {
             let compId = state.Todo.find((key) => key.id == actions.payload);
-            compId.complited = false;
+            compId.completed = false;
         },
-        updateTodo:(state,actions)=>{
-            const {id,newTodo} = actions.payload;
-            // console.log(id);
-            // console.log(newTodo);
-            
-            const compId = state.Todo.find((key) => key.id == id);
-            compId.todo=newTodo;
-            
+        updateTodo: (state, actions) => {
+            const { id, newTodo } = actions.payload;
+            console.log(id);
+            console.log(newTodo);
+
+            const compIndex = state.Todo.findIndex((key) => key.id == id);
+
+            if (compIndex !== -1) {
+                state.Todo[compIndex] = {
+                    todo: newTodo,
+                };
+            }
+
         }
     }
 })
 
-export const { addTodo, deleteTodo, compliteTodo, inCompliteTodo,updateTodo } = todoSlice.actions;
+export const { addTodo, deleteTodo, compliteTodo, inCompliteTodo, updateTodo } = todoSlice.actions;
 export default todoSlice.reducer;
